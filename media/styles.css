@@ -1,0 +1,142 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background-color: black;
+}
+
+.container, .buttonContainer, .resultContainer {
+    width: 100%;
+    max-width: 600px;
+    background-color: #004400;
+    border-radius: 10px;
+    margin: 5px 0;
+}
+
+/* Стили для больших экранов (по умолчанию) */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+}
+
+.input-wrapper {
+    flex: 1;
+}
+
+.operationField {
+    width: 75px;
+}
+
+.inputField {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.buttonContainer {
+    padding: 15px;
+}
+
+.resultContainer {
+    padding: 15px;
+}
+
+.inputField, .operationField, .button, .resultField {
+    background-color: #004400;
+    border-style: dotted;
+    border-color: red;
+    border-radius: 10px;
+    border-width: 2px;
+    color: red;
+    font-weight: bold;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.inputField {
+    height: 45px;
+    font-size: 15pt;
+    padding: 5px 15px;
+}
+
+.operationField {
+    height: 45px;
+    font-size: 15pt;
+    padding: 5px;
+}
+
+.button {
+    width: 100%;
+    height: 45px;
+    font-size: 15pt;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.resultField {
+    width: 100%;
+    min-height: 100px;
+    font-size: 15pt;
+    padding: 15px;
+    resize: none;
+}
+
+.history-item {
+    color: rgba(255, 0, 0, 0.5);
+    font-size: 15pt;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Стили для ошибок */
+.inputField.error {
+    border-color: #ff0000;
+    border-width: 3px;
+    background-color: #ffd7d7;
+    animation: shake 0.5s;
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 12pt;
+    margin-top: 5px;
+    display: none;
+    position: absolute;
+    background-color: #ffd7d7;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ff0000;
+}
+
+.error-message.visible {
+    display: block;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Мобильная версия */
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .operationField {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
